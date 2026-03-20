@@ -7,9 +7,9 @@ import { Great_Vibes, Montserrat } from "next/font/google";
 import { useEffect, useState } from "react";
 
 const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['300', '400', '600'],
-})
+  subsets: ["latin"],
+  weight: ["300", "400", "600"],
+});
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -28,10 +28,10 @@ export default function Hero() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   return (
@@ -149,10 +149,6 @@ export default function Hero() {
             opacity: 0;
           }
 
-          .profile-image {
-            animation: fadeInScale 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-            opacity: 0;
-          }
 
           .my-text {
             animation: slideInLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
@@ -175,8 +171,7 @@ export default function Hero() {
         }
       `}</style>
 
-      <section className="relative w-full min-h-screen md:h-screen bg-[#f3f3f3] overflow-hidden flex flex-col md:block">
-        
+      <section className="relative w-full min-h-[75vh] md:h-screen bg-[#f3f3f3] overflow-hidden flex flex-col md:block">
         {/* DESKTOP: PORTFOLIO OUTLINE */}
         <div className="hidden md:block absolute top-0 left-0 w-full h-full">
           <h1
@@ -213,7 +208,9 @@ export default function Hero() {
 
         {/* MOBILE: PORTFOLIO TEXT */}
         <div className="block md:hidden absolute top-8 left-6 z-10 w-full max-w-xs">
-          <h1 className={`${bebas.className} portfolio-outline text-4xl font-bold text-gray-800 leading-none mb-2`}>
+          <h1
+            className={`${bebas.className} portfolio-outline text-4xl font-bold text-gray-800 leading-none mb-2`}
+          >
             PORTFOLIO
           </h1>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
@@ -268,49 +265,119 @@ export default function Hero() {
         </div>
 
         {/* NAME TEXT - Desktop */}
-        <div className={`${montserrat.className} name-info hidden md:block absolute right-[13%] top-[65%] z-20 text-right transition-all duration-700 hover:translate-x-2`}>
+        <div
+          className={`${montserrat.className} name-info hidden md:block absolute right-[13%] top-[65%] z-20 text-right transition-all duration-700 hover:translate-x-2`}
+        >
           <h3 className="text-lg text-gray-700 transition-colors duration-500">
-            Full <span className="text-blue-500 transition-colors duration-500 hover:text-blue-600">Stack</span>
+            Full{" "}
+            <span className="text-blue-500 transition-colors duration-500 hover:text-blue-600">
+              Stack
+            </span>
           </h3>
-          <p className="text-gray-500 text-sm transition-colors duration-500">Developer</p>
+          <p className="text-gray-500 text-sm transition-colors duration-500">
+            Developer
+          </p>
         </div>
 
         {/* ========== MOBILE LAYOUT ========== */}
-        <div className="md:hidden flex-1 flex flex-col items-center justify-center px-6 pt-20 pb-12 z-10 relative">
-          
-          
+        <div className="md:hidden  flex-1 flex flex-col items-center justify-center px-6 pt-20 pb-12 z-10 relative">
+          {/* DESKTOP: PORTFOLIO OUTLINE */}
+          <div className="absolute top-0 left-0 w-full h-full">
+            <h1
+              className={`
+            portfolio-outline
+            absolute top-[40%] left-[50%]
+            -translate-x-1/2 -translate-y-1/2
+            text-[30vw] font-bold
+            text-transparent
+            leading-none tracking-tight z-0
+            
+            ${bebas.className}
 
-          {/* PROFILE IMAGE - Mobile */}
-          <div className="relative profile-image w-full max-w-xs mb-8">
-            <div className="relative w-full aspect-[3/4] bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
+            [webkit-text-stroke:1px_#888]
+            [-webkit-text-stroke:2px_#999]
+
+            [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_0%,rgba(0,0,0,0)_90%)]
+            [-webkit-mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_0%,rgba(0,0,0,0)_75%)]
+          `}
+            >
+              PORTFOLIO
+            </h1>
+
+            {/* WHITE FADE OVERLAY */}
+            <div
+              className="absolute bottom-0 left-0 w-full h-[35%] 
+          bg-gradient-to-t 
+          from-[#f3f3f3] 
+          via-[#f3f3f3]/90 
+          to-transparent 
+          backdrop-blur-[2px]"
+            ></div>
+          </div>
+
+          {/* BACKGROUND SCRIPT NAME */}
+          <h1
+            className={`${caveat.className} 
+          susith-text
+          absolute md:bottom-[5%] md:left-[45%] top-[40%] left-[40%]
+          -translate-x-1/2 md:-translate-x-1/2
+          md:text-[25vw] text-[100px]
+          text-gray-300/80 
+          leading-none italic
+          z-0 
+          md:rotate-[-8deg] rotate-[-6deg]`}
+          >
+            Susith
+          </h1>
+
+          {/* MY TEXT - Desktop */}
+          <div className="md:block absolute top-[24%] left-[4%] rotate-[-12deg] z-20">
+            <h2
+              className={`${caveat.className} 
+            my-text
+            text-[40px] text-black 
+            absolute top-0 left-0
+            transition-all duration-700 hover:scale-110 cursor-default`}
+            >
+              My
+            </h2>
+          </div>
+
+          {/* IMAGE - Desktop */}
+          <div className="md:block absolute top-0 top-[25%] right-[-10%] z-10">
+            <div className="relative">
               <Image
                 src="/assets/profile.png"
                 alt="profile"
-                fill
-                className="grayscale object-cover opacity-90 transition-all duration-1000 hover:opacity-100 hover:grayscale-0"
+                width={350}
+                height={300}
+                className="grayscale object-contain opacity-90 
+             [mask-image:linear-gradient(to_bottom,black_99%,transparent_100%)]"  
                 priority
               />
 
-              {/* SOFT FADE - Mobile */}
+              {/* SOFT FADE */}
               <div
-                className="absolute bottom-0 left-0 w-full h-32 
-                bg-gradient-to-t from-[#f3f3f3] via-[#f3f3f3]/70 to-transparent"
+                className="absolute bottom-0 left-0 w-full h-28 
+              bg-gradient-to-t from-[#f3f3f3] via-[#f3f3f3]/80 to-transparent"
               ></div>
             </div>
           </div>
 
-          {/* NAME INFO - Mobile */}
-          <div className={`${montserrat.className} name-info text-center mb-4`}>
-            <h3 className="text-lg md:text-xl text-gray-800 font-medium transition-colors duration-500">
-              Full <span className="text-blue-500 transition-colors duration-500">Stack</span>
+          {/* NAME TEXT - Desktop */}
+          <div
+            className={`${montserrat.className} name-info md:block absolute right-[5%] top-[45%] z-20 text-right transition-all duration-700 hover:translate-x-2`}
+          >
+            <h3 className="text-[10px] text-gray-700 transition-colors duration-500">
+              Full{" "}
+              <span className="text-blue-500 transition-colors duration-500 hover:text-blue-600">
+                Stack
+              </span>
             </h3>
-            <p className="text-gray-600 text-sm md:text-base transition-colors duration-500 font-light">Developer</p>
+            <p className="text-gray-500 text-[10px] transition-colors duration-500">
+              Developer
+            </p>
           </div>
-
-          {/* CTA BUTTON - Mobile */}
-          <button className={`${montserrat.className} mt-8 px-6 py-3 bg-blue-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:bg-blue-600 hover:shadow-lg active:scale-95`}>
-            Explore Work
-          </button>
         </div>
 
         {/* Mobile Gradient Fade */}

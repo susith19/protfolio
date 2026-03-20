@@ -173,7 +173,7 @@ export default function Projects() {
         </div>
         <div className="">
           {/* PROJECT GRID */}
-          <div className="grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
+          <div className="hidden sm:grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
             {/* TOP LEFT */}
             <div
               className="project-image col-span-4"
@@ -272,7 +272,7 @@ export default function Projects() {
               <h3
                 className={`${montserrat.className} text-blue-600 font-bold text-2xl md:text-3xl mb-2 tracking-tight`}
               >
-                Hiltek AI & Robotics College Portfolio
+                1.Hiltek AI & Robotics College Portfolio
               </h3>
               <p
                 className={`${montserrat.className} text-gray-500 text-sm md:text-base font-medium`}
@@ -419,7 +419,7 @@ export default function Projects() {
         </div>
         <div className="pt-28">
           {/* PROJECT GRID */}
-          <div className="grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
+          <div className="hidden sm:grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
             {/* TOP LEFT */}
             <div
               className="project-image col-span-4"
@@ -518,7 +518,7 @@ export default function Projects() {
               <h3
                 className={`${montserrat.className} text-blue-600 font-bold text-2xl md:text-3xl mb-2 tracking-tight`}
               >
-                Inventory Management System
+                2.Inventory Management System
               </h3>
               <p
                 className={`${montserrat.className} text-gray-500 text-sm md:text-base font-medium`}
@@ -627,7 +627,7 @@ export default function Projects() {
         </div>
         <div className="pt-28">
           {/* PROJECT GRID - MOBILE APP SCREENS */}
-          <div className="flex justify-center items-center gap-4 md:gap-8 mb-12 md:mb-20 flex-wrap">
+          <div className="hidden md:flex justify-center items-center gap-4 md:gap-8 mb-12 md:mb-20 flex-wrap">
             {/* APP SCREEN 1 */}
             <div
               className="project-image w-32 md:w-40"
@@ -710,7 +710,7 @@ export default function Projects() {
               <h3
                 className={`${montserrat.className} text-blue-600 font-bold text-2xl md:text-3xl mb-2 tracking-tight`}
               >
-                Leaf Detection & Treatment System
+                3.Leaf Detection & Treatment System
               </h3>
               <p
                 className={`${montserrat.className} text-gray-500 text-sm md:text-base font-medium`}
@@ -829,7 +829,7 @@ export default function Projects() {
 
         <div className="pt-28">
           {/* PROJECT GRID */}
-          <div className="grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
+          <div className="hidden sm:grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
             {/* TOP LEFT */}
             <div
               className="project-image col-span-4"
@@ -928,7 +928,7 @@ export default function Projects() {
               <h3
                 className={`${montserrat.className} text-blue-600 font-bold text-2xl md:text-3xl mb-2 tracking-tight`}
               >
-                KingPUBG Tournaments
+                4.KingPUBG Tournaments
               </h3>
               <p
                 className={`${montserrat.className} text-gray-500 text-sm md:text-base font-medium`}
