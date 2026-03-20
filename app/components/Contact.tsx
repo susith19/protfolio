@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Montserrat, Bebas_Neue } from 'next/font/google';
-import { FiMail, FiPhone, FiMapPin, FiArrowRight } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiArrowRight, FiLoader } from 'react-icons/fi';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -21,6 +21,7 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -48,9 +49,26 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage('');
+
+    // Basic validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
+      setSubmitStatus('error');
+      setErrorMessage('Please fill in all fields');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus('error');
+      setErrorMessage('Please enter a valid email');
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
-      // Replace with your actual form submission endpoint
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -60,13 +78,18 @@ export default function Contact() {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
+        // Clear success message after 5 seconds
         setTimeout(() => setSubmitStatus('idle'), 5000);
       } else {
+        const data = await response.json();
         setSubmitStatus('error');
+        setErrorMessage(data.error || 'Failed to send message. Please try again.');
         setTimeout(() => setSubmitStatus('idle'), 5000);
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
+      setErrorMessage('Network error. Please check your connection and try again.');
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsSubmitting(false);
@@ -126,6 +149,15 @@ export default function Contact() {
           }
         }
 
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
         .section-title {
           animation: slideInLeft 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
           opacity: 0;
@@ -161,6 +193,10 @@ export default function Contact() {
         .form-input:focus {
           transform: translateY(-2px);
           box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+        }
+
+        .spinner {
+          animation: spin 1s linear infinite;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -291,9 +327,9 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  required
+                  disabled={isSubmitting}
                   placeholder="John Doe"
-                  className="form-input w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:bg-white focus:outline-none"
+                  className="form-input w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:bg-white focus:outline-none disabled:opacity-50"
                 />
               </div>
 
@@ -307,9 +343,9 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  required
+                  disabled={isSubmitting}
                   placeholder="john@example.com"
-                  className="form-input w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:bg-white focus:outline-none"
+                  className="form-input w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:bg-white focus:outline-none disabled:opacity-50"
                 />
               </div>
 
@@ -323,9 +359,9 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  required
+                  disabled={isSubmitting}
                   placeholder="Project Inquiry"
-                  className="form-input w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:bg-white focus:outline-none"
+                  className="form-input w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:bg-white focus:outline-none disabled:opacity-50"
                 />
               </div>
 
@@ -338,16 +374,16 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  required
+                  disabled={isSubmitting}
                   placeholder="Tell me about your project..."
                   rows={5}
-                  className="form-input w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:bg-white focus:outline-none resize-none"
+                  className="form-input w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:bg-white focus:outline-none resize-none disabled:opacity-50"
                 />
               </div>
 
               {/* Status Messages */}
               {submitStatus === 'success' && (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 animate-pulse">
                   <p className={`${montserrat.className} text-green-700 font-medium`}>
                     ✓ Message sent successfully! I'll get back to you soon.
                   </p>
@@ -357,7 +393,7 @@ export default function Contact() {
               {submitStatus === 'error' && (
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                   <p className={`${montserrat.className} text-red-700 font-medium`}>
-                    ✗ Error sending message. Please try again.
+                    ✗ {errorMessage || 'Error sending message. Please try again.'}
                   </p>
                 </div>
               )}
@@ -368,8 +404,17 @@ export default function Contact() {
                 disabled={isSubmitting}
                 className={`${montserrat.className} w-full inline-flex items-center justify-center gap-3 px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95`}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-                <FiArrowRight size={20} />
+                {isSubmitting ? (
+                  <>
+                    <FiLoader size={20} className="spinner" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <FiArrowRight size={20} />
+                  </>
+                )}
               </button>
 
               <p className={`${montserrat.className} text-xs text-gray-500 text-center`}>
@@ -452,7 +497,7 @@ export default function Contact() {
                 </a>
               </div>
 
-              {/* Bahance / Portfolio */}
+              {/* GitHub / Portfolio */}
               <div>
                 <p className={`${montserrat.className} text-sm text-gray-500 font-medium uppercase tracking-widest mb-2`}>
                   Portfolio

@@ -163,11 +163,11 @@ export default function Resume() {
           {/* LEFT - EXPERIENCE */}
           <div className="left-content">
             <h2 className={`${montserrat.className} text-2xl md:text-3xl font-bold text-gray-900 mb-8 tracking-tight`}>
-              Work <span className="text-gray-600">Experiences</span>
+              Work <span className="text-gray-900">Experiences</span>
             </h2>
 
             <div className="space-y-8">
-              <div className="experience-card">
+              <div className="">
                 <h3 className="text-blue-600 font-bold text-lg md:text-xl hover:text-blue-700 transition-colors duration-300">
                   Chasseur Cyber Solution Pvt Ltd
                 </h3>
@@ -188,7 +188,7 @@ export default function Resume() {
                 </ul>
               </div>
 
-              <div className="experience-card">
+              <div className="">
                 <h3 className="text-blue-600 font-bold text-lg md:text-xl hover:text-blue-700 transition-colors duration-300">
                   Character XYZ
                 </h3>
@@ -205,7 +205,7 @@ export default function Resume() {
                 </ul>
               </div>
 
-              <div className="experience-card">
+              <div className="">
                 <h3 className="text-blue-600 font-bold text-lg md:text-xl hover:text-blue-700 transition-colors duration-300">
                   Prodigy Technologies
                 </h3>
@@ -227,7 +227,7 @@ export default function Resume() {
           {/* MIDDLE - SUMMARY + EDUCATION */}
           <div className="middle-content">
             <h2 className={`${montserrat.className} text-blue-600 text-xl md:text-2xl font-bold mb-2 tracking-tight`}>
-              Full Stack Developer
+              Full Stack <span className='text-blue-600'> Developer </span>
             </h2>
 
             <p className="text-sm md:text-base text-gray-700 mb-8 font-light leading-relaxed">
@@ -242,19 +242,30 @@ export default function Resume() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-lg md:text-xl font-bold text-gray-900">
-                  B.Tech Computer Science
+                  B.Tech Computer Science - <span className='text-blue-600'> 7.95 CGPA </span>
                 </h3>
                 <p className="text-sm md:text-base text-gray-600 font-medium mt-1">
                   KGiSL Institute of Technology (2025)
                 </p>
               </div>
-
+            </div>
+            <div className="mt-10">
               <div>
                 <h3 className="text-lg md:text-xl font-bold text-gray-900">
-                  Relevant Coursework
+                  Higher Secondary - <span className='text-blue-600'> 84 % </span>
                 </h3>
-                <p className="text-sm md:text-base text-gray-700 font-light mt-1">
-                  Software Engineering, Business Analytics, Web Development
+                <p className="text-sm md:text-base text-gray-600 font-medium mt-1">
+                  Kongu Vellalar Matriculation Higher Secondary School (2021)
+                </p>
+              </div>
+            </div>
+            <div className="mt-10">
+              <div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900">
+                  SSLC - <span className='text-blue-600'> 76.4 % </span>
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 font-medium mt-1">
+                  Tagore Vidhalaya Marticulation School (2019)
                 </p>
               </div>
             </div>
@@ -263,7 +274,7 @@ export default function Resume() {
           {/* RIGHT - INFO + SKILLS */}
           <div className="right-content">
             <h2 className={`${montserrat.className} text-2xl md:text-3xl font-bold text-gray-900 mb-8 tracking-tight`}>
-              Personal <span className="text-blue-600">Info</span>
+              Personal <span>Info</span>
             </h2>
 
             <div className="text-sm md:text-base text-gray-800 space-y-3 mb-10 font-light">

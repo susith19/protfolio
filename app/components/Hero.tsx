@@ -298,7 +298,7 @@ export default function Hero() {
             ${bebas.className}
 
             [webkit-text-stroke:1px_#888]
-            [-webkit-text-stroke:2px_#999]
+            [-webkit-text-stroke:1px_#999]
 
             [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_0%,rgba(0,0,0,0)_90%)]
             [-webkit-mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_0%,rgba(0,0,0,0)_75%)]
@@ -353,7 +353,7 @@ export default function Hero() {
                 src="/assets/profile.png"
                 alt="profile"
                 width={350}
-                height={300}
+                height={10}
                 className="grayscale object-contain opacity-90 
              [mask-image:linear-gradient(to_bottom,black_99%,transparent_100%)]"  
                 priority

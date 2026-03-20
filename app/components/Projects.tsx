@@ -172,100 +172,6 @@ export default function Projects() {
           </h2>
         </div>
         <div className="">
-          {/* PROJECT GRID */}
-          <div className="hidden sm:grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
-            {/* TOP LEFT */}
-            <div
-              className="project-image col-span-4"
-              style={{ animationDelay: "0.3s" }}
-            >
-              <div className="image-card relative w-full h-full">
-                <Image
-                  src="/projects/protfolio/1.png"
-                  alt="project 1"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* TOP CENTER */}
-            <div
-              className="project-image col-span-4"
-              style={{ animationDelay: "0.4s" }}
-            >
-              <div className="image-card relative w-full h-full">
-                <Image
-                  src="/projects/protfolio/2.png"
-                  alt="project 2"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* TOP RIGHT */}
-            <div
-              className="project-image col-span-4"
-              style={{ animationDelay: "0.5s" }}
-            >
-              <div className="image-card relative w-full h-full">
-                <Image
-                  src="/projects/protfolio/3.png"
-                  alt="project 3"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* BOTTOM LEFT */}
-            <div
-              className="project-image col-span-3"
-              style={{ animationDelay: "0.6s" }}
-            >
-              <div className="image-card relative w-full h-full">
-                <Image
-                  src="/projects/protfolio/4.png"
-                  alt="project 4"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* BOTTOM CENTER */}
-            <div
-              className="project-image col-span-3"
-              style={{ animationDelay: "0.7s" }}
-            >
-              <div className="image-card relative w-full h-full">
-                <Image
-                  src="/projects/protfolio/5.png"
-                  alt="project 5"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* BOTTOM RIGHT BIG */}
-            <div
-              className="project-image col-span-6"
-              style={{ animationDelay: "0.8s" }}
-            >
-              <div className="image-card relative w-full h-full">
-                <Image
-                  src="/projects/protfolio/6.png"
-                  alt="project 6"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
           {/* DESCRIPTION */}
           <div className="project-description max-w-4xl mt-6 md:mt-20">
             <div className="mb-8">
@@ -409,15 +315,8 @@ export default function Projects() {
                 Visit Live Website
                 <FiArrowRight size={20} />
               </a>
-              <button
-                className={`${montserrat.className} inline-flex items-center justify-center gap-3 px-8 py-3 bg-gray-200 text-gray-900 font-bold rounded-lg hover:bg-gray-300 transition-all duration-300`}
-              >
-                View Source Code
-              </button>
             </div>
           </div>
-        </div>
-        <div className="pt-28">
           {/* PROJECT GRID */}
           <div className="hidden sm:grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
             {/* TOP LEFT */}
@@ -427,7 +326,7 @@ export default function Projects() {
             >
               <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/inventory/1.png"
+                  src="/projects/protfolio/1.png"
                   alt="project 1"
                   fill
                   className="object-cover"
@@ -443,7 +342,7 @@ export default function Projects() {
             >
               <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/inventory/2.png"
+                  src="/projects/protfolio/2.png"
                   alt="project 2"
                   fill
                   className="object-cover"
@@ -458,7 +357,7 @@ export default function Projects() {
             >
               <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/inventory/3.png"
+                  src="/projects/protfolio/3.png"
                   alt="project 3"
                   fill
                   className="object-cover"
@@ -473,7 +372,7 @@ export default function Projects() {
             >
               <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/inventory/4.png"
+                  src="/projects/protfolio/4.png"
                   alt="project 4"
                   fill
                   className="object-cover"
@@ -488,7 +387,7 @@ export default function Projects() {
             >
               <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/inventory/5.png"
+                  src="/projects/protfolio/5.png"
                   alt="project 5"
                   fill
                   className="object-cover"
@@ -503,7 +402,7 @@ export default function Projects() {
             >
               <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/inventory/6.png"
+                  src="/projects/protfolio/6.png"
                   alt="project 6"
                   fill
                   className="object-cover"
@@ -511,7 +410,9 @@ export default function Projects() {
               </div>
             </div>
           </div>
-
+        </div>
+        <div className="pt-28">
+          
           {/* DESCRIPTION */}
           <div className="project-description max-w-4xl mt-6 md:mt-20">
             <div className="mb-8">
@@ -617,26 +518,20 @@ export default function Projects() {
                 Visit Live Project
                 <FiArrowRight size={20} />
               </a>
-              <button
-                className={`${montserrat.className} inline-flex items-center justify-center gap-3 px-8 py-3 bg-gray-200 text-gray-900 font-bold rounded-lg hover:bg-gray-300 transition-all duration-300`}
-              >
-                View Code
-              </button>
+          
             </div>
           </div>
-        </div>
-        <div className="pt-28">
-          {/* PROJECT GRID - MOBILE APP SCREENS */}
-          <div className="hidden md:flex justify-center items-center gap-4 md:gap-8 mb-12 md:mb-20 flex-wrap">
-            {/* APP SCREEN 1 */}
+          {/* PROJECT GRID */}
+          <div className="hidden sm:grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
+            {/* TOP LEFT */}
             <div
-              className="project-image w-32 md:w-40"
+              className="project-image col-span-4"
               style={{ animationDelay: "0.3s" }}
             >
-              <div className="image-card relative w-full aspect-[9/19] rounded-3xl border-4 md:border-6 border-gray-900 overflow-hidden shadow-2xl bg-white">
+              <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/flutter/1.png"
-                  alt="app screen 1"
+                  src="/projects/inventory/1.png"
+                  alt="project 1"
                   fill
                   className="object-cover"
                   priority
@@ -644,59 +539,75 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* APP SCREEN 2 */}
+            {/* TOP CENTER */}
             <div
-              className="project-image w-32 md:w-40"
+              className="project-image col-span-4"
               style={{ animationDelay: "0.4s" }}
             >
-              <div className="image-card relative w-full aspect-[9/19] rounded-3xl border-4 md:border-6 border-gray-900 overflow-hidden shadow-2xl bg-white">
+              <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/flutter/2.png"
-                  alt="app screen 2"
+                  src="/projects/inventory/2.png"
+                  alt="project 2"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
 
-            {/* APP SCREEN 3 */}
+            {/* TOP RIGHT */}
             <div
-              className="project-image w-32 md:w-40"
+              className="project-image col-span-4"
               style={{ animationDelay: "0.5s" }}
             >
-              <div className="image-card relative w-full aspect-[9/19] rounded-3xl border-4 md:border-6 border-gray-900 overflow-hidden shadow-2xl bg-white">
+              <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/flutter/3.png"
-                  alt="app screen 3"
+                  src="/projects/inventory/3.png"
+                  alt="project 3"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
 
-            {/* APP SCREEN 4 */}
+            {/* BOTTOM LEFT */}
             <div
-              className="project-image w-32 md:w-40"
+              className="project-image col-span-3"
               style={{ animationDelay: "0.6s" }}
             >
-              <div className="image-card relative w-full aspect-[9/19] rounded-3xl border-4 md:border-6 border-gray-900 overflow-hidden shadow-2xl bg-white">
+              <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/flutter/4.png"
-                  alt="app screen 4"
+                  src="/projects/inventory/4.png"
+                  alt="project 4"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
-            {/* APP SCREEN 5 */}
+
+            {/* BOTTOM CENTER */}
             <div
-              className="project-image w-32 md:w-40"
-              style={{ animationDelay: "0.6s" }}
+              className="project-image col-span-3"
+              style={{ animationDelay: "0.7s" }}
             >
-              <div className="image-card relative w-full aspect-[9/19] rounded-3xl border-4 md:border-6 border-gray-900 overflow-hidden shadow-2xl bg-white">
+              <div className="image-card relative w-full h-full">
                 <Image
-                  src="/projects/flutter/5.png"
-                  alt="app screen 4"
+                  src="/projects/inventory/5.png"
+                  alt="project 5"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* BOTTOM RIGHT BIG */}
+            <div
+              className="project-image col-span-6"
+              style={{ animationDelay: "0.8s" }}
+            >
+              <div className="image-card relative w-full h-full">
+                <Image
+                  src="/projects/inventory/6.png"
+                  alt="project 6"
                   fill
                   className="object-cover"
                 />
@@ -704,6 +615,9 @@ export default function Projects() {
             </div>
           </div>
 
+        </div>
+        <div className="pt-28">
+          
           {/* DESCRIPTION */}
           <div className="project-description max-w-4xl mt-6 md:mt-20">
             <div className="mb-8">
@@ -810,35 +724,18 @@ export default function Projects() {
                 <span>Real-time symptom tracking and health insights</span>
               </li>
             </ul>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                className={`${montserrat.className} inline-flex items-center justify-center gap-3 px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95`}
-              >
-                View App Details
-                <FiArrowRight size={20} />
-              </button>
-              <button
-                className={`${montserrat.className} inline-flex items-center justify-center gap-3 px-8 py-3 bg-gray-200 text-gray-900 font-bold rounded-lg hover:bg-gray-300 transition-all duration-300`}
-              >
-                View Code
-              </button>
-            </div>
           </div>
-        </div>
-
-        <div className="pt-28">
-          {/* PROJECT GRID */}
-          <div className="hidden sm:grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
-            {/* TOP LEFT */}
+          {/* PROJECT GRID - MOBILE APP SCREENS */}
+          <div className="hidden md:flex justify-center items-center gap-4 md:gap-8 mt-12 flex-wrap">
+            {/* APP SCREEN 1 */}
             <div
-              className="project-image col-span-4"
+              className="project-image w-32 md:w-40"
               style={{ animationDelay: "0.3s" }}
             >
-              <div className="image-card relative w-full h-full">
+              <div className="image-card relative w-full aspect-[9/19] rounded-3xl border-4 md:border-6 border-gray-900 overflow-hidden shadow-2xl bg-white">
                 <Image
-                  src="/projects/tournament/1.png"
-                  alt="project 1"
+                  src="/projects/flutter/1.png"
+                  alt="app screen 1"
                   fill
                   className="object-cover"
                   priority
@@ -846,75 +743,59 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* TOP CENTER */}
+            {/* APP SCREEN 2 */}
             <div
-              className="project-image col-span-4"
+              className="project-image w-32 md:w-40"
               style={{ animationDelay: "0.4s" }}
             >
-              <div className="image-card relative w-full h-full">
+              <div className="image-card relative w-full aspect-[9/19] rounded-3xl border-4 md:border-6 border-gray-900 overflow-hidden shadow-2xl bg-white">
                 <Image
-                  src="/projects/tournament/2.png"
-                  alt="project 2"
+                  src="/projects/flutter/2.png"
+                  alt="app screen 2"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
 
-            {/* TOP RIGHT */}
+            {/* APP SCREEN 3 */}
             <div
-              className="project-image col-span-4"
+              className="project-image w-32 md:w-40"
               style={{ animationDelay: "0.5s" }}
             >
-              <div className="image-card relative w-full h-full">
+              <div className="image-card relative w-full aspect-[9/19] rounded-3xl border-4 md:border-6 border-gray-900 overflow-hidden shadow-2xl bg-white">
                 <Image
-                  src="/projects/tournament/3.png"
-                  alt="project 3"
+                  src="/projects/flutter/3.png"
+                  alt="app screen 3"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
 
-            {/* BOTTOM LEFT */}
+            {/* APP SCREEN 4 */}
             <div
-              className="project-image col-span-3"
+              className="project-image w-32 md:w-40"
               style={{ animationDelay: "0.6s" }}
             >
-              <div className="image-card relative w-full h-full">
+              <div className="image-card relative w-full aspect-[9/19] rounded-3xl border-4 md:border-6 border-gray-900 overflow-hidden shadow-2xl bg-white">
                 <Image
-                  src="/projects/tournament/4.png"
-                  alt="project 4"
+                  src="/projects/flutter/4.png"
+                  alt="app screen 4"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
-
-            {/* BOTTOM CENTER */}
+            {/* APP SCREEN 5 */}
             <div
-              className="project-image col-span-3"
-              style={{ animationDelay: "0.7s" }}
+              className="project-image w-32 md:w-40"
+              style={{ animationDelay: "0.6s" }}
             >
-              <div className="image-card relative w-full h-full">
+              <div className="image-card relative w-full aspect-[9/19] rounded-3xl border-4 md:border-6 border-gray-900 overflow-hidden shadow-2xl bg-white">
                 <Image
-                  src="/projects/tournament/5.png"
-                  alt="project 5"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* BOTTOM RIGHT BIG */}
-            <div
-              className="project-image col-span-6"
-              style={{ animationDelay: "0.8s" }}
-            >
-              <div className="image-card relative w-full h-full">
-                <Image
-                  src="/projects/tournament/6.png"
-                  alt="project 6"
+                  src="/projects/flutter/5.png"
+                  alt="app screen 4"
                   fill
                   className="object-cover"
                 />
@@ -922,6 +803,9 @@ export default function Projects() {
             </div>
           </div>
 
+        </div>
+
+        <div className="pt-28">
           {/* DESCRIPTION */}
           <div className="project-description max-w-4xl mt-6 md:mt-20">
             <div className="mb-8">
@@ -1042,13 +926,102 @@ export default function Projects() {
                 Visit Live Platform
                 <FiArrowRight size={20} />
               </a>
-              <button
-                className={`${montserrat.className} inline-flex items-center justify-center gap-3 px-8 py-3 bg-gray-200 text-gray-900 font-bold rounded-lg hover:bg-gray-300 transition-all duration-300`}
-              >
-                View Code
-              </button>
+             
             </div>
           </div>
+          {/* PROJECT GRID */}
+          <div className="hidden sm:grid grid-cols-12 gap-4 mt-6 auto-rows-[minmax(260px,260px)]">
+            {/* TOP LEFT */}
+            <div
+              className="project-image col-span-4"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <div className="image-card relative w-full h-full">
+                <Image
+                  src="/projects/tournament/1.png"
+                  alt="project 1"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* TOP CENTER */}
+            <div
+              className="project-image col-span-4"
+              style={{ animationDelay: "0.4s" }}
+            >
+              <div className="image-card relative w-full h-full">
+                <Image
+                  src="/projects/tournament/2.png"
+                  alt="project 2"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* TOP RIGHT */}
+            <div
+              className="project-image col-span-4"
+              style={{ animationDelay: "0.5s" }}
+            >
+              <div className="image-card relative w-full h-full">
+                <Image
+                  src="/projects/tournament/3.png"
+                  alt="project 3"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* BOTTOM LEFT */}
+            <div
+              className="project-image col-span-3"
+              style={{ animationDelay: "0.6s" }}
+            >
+              <div className="image-card relative w-full h-full">
+                <Image
+                  src="/projects/tournament/4.png"
+                  alt="project 4"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* BOTTOM CENTER */}
+            <div
+              className="project-image col-span-3"
+              style={{ animationDelay: "0.7s" }}
+            >
+              <div className="image-card relative w-full h-full">
+                <Image
+                  src="/projects/tournament/5.png"
+                  alt="project 5"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* BOTTOM RIGHT BIG */}
+            <div
+              className="project-image col-span-6"
+              style={{ animationDelay: "0.8s" }}
+            >
+              <div className="image-card relative w-full h-full">
+                <Image
+                  src="/projects/tournament/6.png"
+                  alt="project 6"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div> 
         </div>
       </section>
     </>
