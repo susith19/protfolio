@@ -149,7 +149,10 @@ export default function Hero() {
             opacity: 0;
           }
 
-
+        .profile-image {
+            animation: fadeInScale 2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+            opacity: 0;
+          }
           .my-text {
             animation: slideInLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
             opacity: 0;
@@ -331,7 +334,7 @@ export default function Hero() {
           </h1>
 
           {/* MY TEXT - Desktop */}
-          <div className="md:block absolute top-[24%] left-[4%] rotate-[-12deg] z-20">
+          <div className="md:block absolute top-[28%] left-[4%] rotate-[-12deg] z-20">
             <h2
               className={`${caveat.className} 
             my-text
@@ -344,7 +347,7 @@ export default function Hero() {
           </div>
 
           {/* IMAGE - Desktop */}
-          <div className="md:block absolute top-0 top-[25%] right-[-10%] z-10">
+          <div className="md:block absolute top-0 top-[28%] right-[-10%] z-10">
             <div className="relative">
               <Image
                 src="/assets/profile.png"
